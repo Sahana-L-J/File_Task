@@ -36,24 +36,18 @@ public class FilesMoveAndFindByPattern {
          }
 		
          
-         FileInputStream fis = null;
-         FileOutputStream fos = null;
-  
-             fis = new FileInputStream("D:\\programfiles\\program1.txt");
-  
-             fos = new FileOutputStream("D:\\files\\program6.txt");
-  
-             int c;
-  
-             while ((c = fis.read()) != -1) {
-                 fos.write(c);
-             }
-  
-             System.out.println("copied the file successfully");
+         File file = new File("D:\\programfiles\\program10.txt");
          
-  
-                 fis.close();
-                 fos.close();
+         if(file.renameTo
+            (new File("D:\\files\\program11.txt")))
+         {
+             file.delete();
+             System.out.println("File moved successfully");
+         }
+         else
+         {
+             System.out.println("Failed to move the file");
+         }
         
 		
 	
